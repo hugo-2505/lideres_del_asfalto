@@ -6,7 +6,8 @@ import { SplineScene } from "@/components/ui/splite";
 import { Card } from "@/components/ui/card";
 import { Spotlight } from "@/components/ui/spotlight";
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+const apiKey = process.env.GEMINI_API_KEY || (import.meta as any).env?.VITE_GEMINI_API_KEY || "";
+const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
 
 type Message = {
   id: string;
@@ -52,6 +53,18 @@ export default function ChatSection() {
           id: Date.now().toString(),
           role: 'model',
           text: "¡Excelente decisión! Puedes unirte a nuestra comunidad privada y acceder a todos los beneficios por solo $9.99/mes. [Haz clic aquí para suscribirte](#pricing)."
+        }]);
+        setIsLoading(false);
+      }, 600);
+      return;
+    }
+
+    if (!ai) {
+      setTimeout(() => {
+        setMessages(prev => [...prev, {
+          id: Date.now().toString(),
+          role: 'model',
+          text: "⚠️ Error de conexión: La API Key de Gemini no está configurada. Si estás desplegando en Cloudflare Pages, asegúrate de añadir la variable de entorno VITE_GEMINI_API_KEY con tu clave."
         }]);
         setIsLoading(false);
       }, 600);
