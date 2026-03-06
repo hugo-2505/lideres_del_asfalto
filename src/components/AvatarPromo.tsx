@@ -22,19 +22,13 @@ export default function AvatarPromo() {
           >
             <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(0,75,135,0.3)] aspect-[9/16] max-w-sm mx-auto lg:mx-0">
               <video 
-                src="https://res.cloudinary.com/dmtqp1wqz/video/upload/v1772814392/Cila_Promotion_frnuuq.mp4" 
+                src="https://res.cloudinary.com/dmtqp1wqz/video/upload/v1772824903/092cc439-2dce-4c39-9b78-8d0bedfb833c_zimrax.mp4" 
                 autoPlay 
                 loop 
                 controls
                 playsInline
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-asphalt via-transparent to-transparent"></div>
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
-                <span className="inline-block bg-traffic text-asphalt text-xs font-bold px-3 py-1 rounded-full mb-2 animate-pulse">
-                  ¡Mensaje Importante!
-                </span>
-              </div>
             </div>
           </motion.div>
           
