@@ -25,7 +25,7 @@ export default function AvatarPromo() {
                 src="https://res.cloudinary.com/dmtqp1wqz/video/upload/v1772814392/Cila_Promotion_frnuuq.mp4" 
                 autoPlay 
                 loop 
-                muted 
+                controls
                 playsInline
                 className="w-full h-full object-cover"
               />
